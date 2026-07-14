@@ -1,6 +1,9 @@
 {
-  "license": "0BSD",
+  "name": "my-dayz",
+  "version": "1.0.0",
   "main": "index.js",
+  "license": "0BSD",
+  "private": true,
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -22,6 +25,5 @@
     "react-native-gesture-handler": "~2.28.0",
     "react-native-safe-area-context": "~5.6.0",
     "@react-navigation/bottom-tabs": "^6.5.11"
-  },
-  "private": true
+  }
 }
