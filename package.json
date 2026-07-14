@@ -1,13 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "@supabase/supabase-js": "^2.110.4",
-    "expo": "^57.0.4",
-    "mysql2": "^3.22.6",
-    "react-dom": "19.2.3"
-  }
-}
-=======
   "license": "0BSD",
   "main": "index.js",
   "scripts": {
@@ -34,4 +25,3 @@
   },
   "private": true
 }
->>>>>>> 5ee017e00b8e8f6b4b854397a96c8eb5a0bd63e0
