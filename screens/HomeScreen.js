@@ -1,6 +1,43 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Image } from 'react-native';
+import { View, Text, TextInput, Button, Image, StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#fff',
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 20,
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 12,
+    marginBottom: 15,
+    borderRadius: 8,
+    fontSize: 14,
+  },
+  moodInput: {
+    borderWidth: 1,
+    borderColor: '#ddd',
+    padding: 12,
+    marginBottom: 15,
+    borderRadius: 8,
+  },
+  photoContainer: {
+    marginTop: 15,
+  },
+  photo: {
+    width: 200,
+    height: 200,
+    borderRadius: 8,
+    marginTop: 10,
+  },
+});
 
 export default function HomeScreen() {
   const [entry, setEntry] = useState('');
@@ -19,11 +56,11 @@ export default function HomeScreen() {
   };
 
   return (
-    <View style={{ flex: 1, padding: 20 }}>
-      <Text style={{ fontSize: 20, marginBottom: 10 }}>My Dayz Entry</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>My Dayz Entry</Text>
 
       <TextInput
-        style={{ borderWidth: 1, padding: 10, marginBottom: 10 }}
+        style={styles.textInput}
         placeholder="Write your 5-line diary..."
         multiline
         numberOfLines={5}
@@ -32,14 +69,18 @@ export default function HomeScreen() {
       />
 
       <TextInput
-        style={{ borderWidth: 1, padding: 10, marginBottom: 10 }}
-        placeholder="Mood (😊, 😔, 😡)"
+        style={styles.moodInput}
+        placeholder="Mood (😊, 😔, 😡, 😴)"
         value={mood}
         onChangeText={setMood}
       />
 
       <Button title="Pick a Photo" onPress={pickImage} />
-      {photo && <Image source={{ uri: photo }} style={{ width: 200, height: 200, marginTop: 10 }} />}
+      {photo && (
+        <View style={styles.photoContainer}>
+          <Image source={{ uri: photo }} style={styles.photo} />
+        </View>
+      )}
     </View>
   );
 }
